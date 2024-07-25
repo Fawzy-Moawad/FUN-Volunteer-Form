@@ -41,10 +41,116 @@ h6 {
 
 
 
-#comingSoon {
+#comingsoon {
   background-color: #0785F3;
 }
 
+#comingsoon h3,
+#comingsoon h4 {
+  font-size: 40px;
+ color: #fff;
+}
+
+#comingsoon h3 {
+  font-size: 60px;
+}
+
+#comingsoon h4 {
+  font-size: 40px;
+}
+
+#comingsoon h4 strong {
+  font-size: 65px;
+ font-weight: 800;
+  color: #14213d;
+}
+
+
+/* Ensure the wave container spans the full width */
+.wave-container {
+  position: relative;
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.section-svg {
+  display: block;
+  width: 150%;
+  height: 200px; /* Adjust height to maintain aspect ratio */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background:  #14213d;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #0785F3;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Prelaoder */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  overflow: hidden;
+  background: #fff;
+}
+
+#preloader:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+  border: 6px solid #f2f2f2;
+  border-top: 6px solid #CE1127;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: animate-preloader 1s linear infinite;
+}
+
+@keyframes animate-preloader {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /*--------------------------------------------------------------
 # Header
@@ -81,51 +187,116 @@ h6 {
   }
 }
 
+/*------------------------------------------------
+Toggle Section
+-------------------------------------------------*/
 
-/**
-* Mobile Navigation 
-*/
-.mobile-nav-toggle {
-  color: #0785F3;
-  font-size: 28px;
-  cursor: pointer;
-  display: none;
-  line-height: 0;
-  transition: 0.5s;
+.toggle-button-cover {
+  display: table-cell;
+  position: relative;
+  width: 200px;
+  height: 140px;
+  box-sizing: border-box;
 }
 
-@media (max-width: 991px) {
-  .mobile-nav-toggle {
-    display: block;
-  }
-
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
+.button-cover:before {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 12px;
+  color: #d7e3e3;
+  line-height: 1;
+  padding: 5px;
 }
 
-.navbar-mobile {
-  position: fixed;
-  overflow: hidden;
+.button-cover,
+.knobs,
+.layer {
+  position: absolute;
   top: 0;
   right: 0;
-  left: 0;
   bottom: 0;
-  background: rgba(26, 26, 26, 0.9);
-  transition: 0.3s;
-  z-index: 999;
+  left: 0;
 }
 
-.navbar-mobile .mobile-nav-toggle {
+.button {
+  position: relative;
+  top: 50%;
+  width: 74px;
+  height: 32px;
+  margin: -15px auto 0 auto;
+  overflow: hidden;
+}
+
+.button.r,
+.button.r .layer {
+  border-radius: 100px;
+}
+
+.button.b2 {
+  border-radius: 2px;
+}
+
+.checkbox {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.knobs {
+  height: 100%;
+  z-index: 2;
+}
+
+.layer {
+  width: 100%;
+  background-color: #fff;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+/* Button 16 */
+#button-16 .knobs:before {
+  content: "ENG";
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 2px;
+  left: 2px;
+  width: 28px;
+  color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  padding: 9px 4px;
+  background-color: #14213d;
+  border-radius: 2px;
+  transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
 }
 
+#button-16 .checkbox:active + .knobs:before {
+  width: 46px;
+}
+
+#button-16 .checkbox:checked:active + .knobs:before {
+  margin-left: -26px;
+}
+
+#button-16 .checkbox:checked + .knobs:before {
+  content: "عربي";
+  left: 42px;
+  background-color: #0785F3;
+}
+
+#button-16 .checkbox:checked ~ .layer {
+  background-color: #fff;
+}
 
 /*--------------------------------------------------------------
 # Sections
@@ -174,55 +345,6 @@ section {
   color: #333;
 }
 
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0;
-  background-color: #f7f7f7;
-  min-height: 40px;
-  margin-top: 80px;
-}
-
-.breadcrumbs h2 {
-  font-size: 24px;
-  margin-bottom: 0;
-  font-weight: 400;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.breadcrumbs ol li+li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li+li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #6c757d;
-  content: "/";
-}
-
-@media (max-width: 768px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
-  }
-
-  .breadcrumbs ol {
-    display: block;
-  }
-
-  .breadcrumbs ol li {
-    display: inline-block;
-  }
-}
 
 /* Contact Section
 --------------------------------*/
@@ -238,6 +360,9 @@ section {
 #contact .section-header p {
   color: #fff;
 }
+
+
+
 
 #contact .contact-info {
   margin-bottom: 20px;
@@ -301,46 +426,17 @@ section {
   background: #14213d;
 }
 
-#contact .email-form .error-message {
-  display: none;
-  color: #fff;
-  background: #ed3c0d;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
 
-#contact .email-form .error-message br+br {
-  margin-top: 25px;
-}
 
 #contact .email-form .sent-message {
   display: none;
   color: #fff;
-  background: #CE1127;
+  background: #14213d;
   text-align: center;
   padding: 15px;
   font-weight: 600;
 }
 
-#contact .email-form .loading {
-  display: none;
-  background: #fff;
-  text-align: center;
-  padding: 15px;
-}
-
-#contact .email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #CE1127;
-  border-top-color: #eee;
-  animation: animate-loading 1s linear infinite;
-}
 
 #contact .email-form .form-group {
   margin-bottom: 20px;
@@ -354,51 +450,26 @@ section {
   font-size: 15px;
 }
 
-#contact .email-form input::focus,
-#contact .email-form textarea::focus {
-  background-color: #CE1127;
+#contact .email-form input:focus,
+#contact .email-form textarea:focus {
+  background-color: #fff;
+  color: #14213d;
 }
 
 #contact .email-form button[type=submit] {
-  background: #fff;
+  background: #0785F3;
   border: 0;
   padding: 10px 30px;
-  color: #14213d;
+  color: #fff;
   transition: 0.4s;
   cursor: pointer;
 }
 
 #contact .email-form button[type=submit]:hover {
-  background: #0785F3;
-  color: #fff;
+  background: #fff;
+  color: #14213d;
 }
 
-@keyframes animate-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Ensure select matches input styling */
-#contact .email-form select {
-  padding: 10px 14px;
-  border-radius: 0;
-  box-shadow: none;
-  font-size: 15px;
-  border: 1px solid #ddd; /* Match input border */
-  background-color: #fff; /* Match input background */
-  color: #000; /* Match input text color */
-}
-
-#contact .email-form select:focus {
-  background-color: #fff; /* Match input focus background */
-  color: #000; /* Match input focus text color */
-  border-color: #CE1127; /* Match input focus border color */
-}
 
 /*--------------------------------------------------------------
 # Footer
@@ -408,11 +479,13 @@ section {
   padding: 0 0 30px 0;
   color: #eee;
   font-size: 14px;
+  position: relative; /* Ensure the SVG can be positioned relative to the footer */
 }
 
 #footer .footer-top {
   background: #14213d;
   padding: 60px 0 30px 0;
+  position: relative; /* Ensure the footer content is positioned correctly */
 }
 
 #footer .footer-top .footer-info {
@@ -437,7 +510,6 @@ section {
   font-family: "Montserrat", sans-serif;
   color: #eee;
 }
-
 
 #footer .footer-top .social-links a {
   display: inline-block;

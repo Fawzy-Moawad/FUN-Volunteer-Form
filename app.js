@@ -28,17 +28,19 @@ app.post('/send', (req, res) => {
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
-        service: 'gmail',
+        host: 'smtp.hostinger.com',
+        port: 587,
+        secure: false, // true for 465, false for other ports
         auth: {
-            user: process.env.EMAIL, // Your Gmail address
-            pass: process.env.PASSWORD // Your Gmail app password
+            user: process.env.EMAIL, // Your email address
+            pass: process.env.PASSWORD // Your email password
         }
     });
 
     // Email options
     const mailOptions = {
         from: process.env.EMAIL, // Your email address from .env
-        to: 'familyunitednetwork2024@gmail.com',
+        to: 'volunteers@fun-canada.com', // Change this to your desired recipient
         subject: 'Volunteer Contact Form',
         text: `Name: ${name}\nPhone: ${phone}\nAge: ${age}\nEmail: ${email}\nHours Per Week: ${VolunteerHours}\nDepartment: ${department}`
     };

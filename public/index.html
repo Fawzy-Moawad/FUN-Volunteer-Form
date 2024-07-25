@@ -38,6 +38,21 @@
         <div class="row justify-content-center align-items-center">
           <div class="col-xl-11 d-flex align-items-center justify-content-between">
             <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+            <nav id="navbar" class="navbar">
+
+              <div class="language-toggle-container">
+                <div class="toggle-button-cover">
+                  <div class="button-cover">
+                    <div class="button b2" id="button-16">
+                      <input type="checkbox" class="checkbox" id="languageToggle" />
+                      <div class="knobs"></div>
+                      <div class="layer"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav><!-- .navbar -->
           </div>
         </div>
       </div>
@@ -51,42 +66,86 @@
       <section id="contact" class="section-bg">
         <div class="container" data-aos="fade-up">
 
-          <div class="section-header p-5">
-            <h3>VOLUNTEER CONTACT FORM</h3>
-            <p>
-              Welcome to our Volunteer Program! We appreciate your interest in joining our team.<br>
-              By filling out this form, you help us better understand your skills, interests, and availability. This information will enable us to match you with suitable volunteering opportunities.<br>
-              Thank you for your willingness to contribute your time and effort to make a difference.
-            </p>
+          <div class="section-header pt-5">
+            <!-- English Content -->
+            <div id="contact-content-en">
+              <h3>VOLUNTEER CONTACT FORM</h3>
+              <p>
+                Welcome to our Volunteer Program! We appreciate your interest in joining our team.<br>
+                By filling out this form, you help us better understand your skills, interests, and availability. This information will enable us to match you with suitable volunteering opportunities.<br>
+                Thank you for your willingness to contribute your time and effort to make a difference.
+              </p>
+
+              <div class="row contact-info">
+
+                <div class="col-lg-4">
+                  <div class="contact-address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Address</h3>
+                    <address>Vancouver, BC, Canada</address>
+                  </div>
+                </div>
+    
+                <div class="col-md-4">
+                  <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>For Volunteers</h3>
+                    <p>volunteers@fun-canada.com</p>
+                  </div>
+                </div>
+    
+                <div class="col-md-4">
+                  <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Email</h3>
+                    <p><a href="#">info@fun-canada.com</a></p>
+                  </div>
+                </div>
+    
+              </div>
+              
+            </div>
+      
+            <!-- Arabic Content -->
+            <div dir="rtl" lang="ar" id="contact-content-ar" style="display: none;">
+              <h3>نموذج التطوع</h3>
+              <p>
+                مرحبا بكم في برنامج التطوع لدينا! <br>
+                نحن نقدر اهتمامك بالانضمام إلى فريقنا. من خلال ملء هذا النموذج ، فإنك تساعدنا على فهم مهاراتك واهتماماتك وتوافرك بشكل أفضل. ستمكننا هذه المعلومات من مطابقتك مع فرص التطوع المناسبة. شكرا لك على استعدادك للمساهمة بوقتك وجهدك لإحداث فرق.
+              </p>
+
+              <div class="row contact-info">
+
+                <div class="col-lg-4">
+                  <div class="contact-address">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>عنوان</h3>
+                    <address>فانكوفر، كولومبيا البريطانية <br> كندا</address>
+                  </div>
+                </div>
+    
+                <div class="col-md-4">
+                  <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>للمتطوعين</h3>
+                    <p>volunteers@fun-canada.com</p>
+                  </div>
+                </div>
+    
+                <div class="col-md-4">
+                  <div class="contact-email">
+                    <i class="bi bi-envelope"></i>
+                    <h3>البريد الإلكتروني</h3>
+                    <p><a href="mailto:info@example.com">info@fun-canada.com</a></p>
+                  </div>
+                </div>
+    
+              </div>
+
+            </div>
           </div>
 
-          <div class="row contact-info">
-
-            <div class="col-md-4">
-              <div class="contact-address">
-                <i class="bi bi-geo-alt"></i>
-                <h3>Address</h3>
-                <address>Vancouver, BC, Canada</address>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="contact-phone">
-                <i class="bi bi-phone"></i>
-                <h3>Phone Number</h3>
-                <p><a href="tel:+10000000000">+1 000 000 0000</a></p>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="contact-email">
-                <i class="bi bi-envelope"></i>
-                <h3>Email</h3>
-                <p><a href="mailto:info@example.com">info@example.com</a></p>
-              </div>
-            </div>
-
-          </div>
+          
 
           <div class="form">
             <form action="/send" method="POST" class="email-form">
@@ -146,15 +205,13 @@
         </div>
       </section>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#0785F3" fill-opacity="1" 
-          d="M0,256L48,245.3C96,235,192,213,288,208C384,203,480,213,576,213.3C672,213,768,203,864,181.3C960,160,1056,128,1152,122.7C1248,117,1344,139,1392,149.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
-        </path>
-      </svg>
-
       <!-- / Contact Section -->
 
       <!-- ======= Sponsers Section ======= -->
+
+      <div class="wave-container">
+        <img src="./assets/img/svg/sponsers-top.png" alt="Wave SVG" class="section-svg">
+      </div>
 
       <section id="clients" class="">
         <div class="container" data-aos="zoom-in">
@@ -182,6 +239,10 @@
         </div>
       </section>
 
+      <div class="wave-container">
+        <img src="./assets/img/svg/sponsers-footer.png" alt="Wave SVG" class="section-svg">
+      </div>
+
       <!-- ======= / Sponsers Section ======= -->
 
 
@@ -191,52 +252,94 @@
 
     <!-- ======= Footer ======= -->
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <path fill="#14213d" fill-opacity="1" 
-        d="M0,256L48,245.3C96,235,192,213,288,208C384,203,480,213,576,213.3C672,213,768,203,864,181.3C960,160,1056,128,1152,122.7C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-      </path>
-    </svg>
-
     <section id="footer">
+
+      <!-- English Content -->
+      <div id="footer-content-en">
         
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-  
-            <div class="col-lg-6 col-md-6 footer-info">
-              <h4>Family United Network</h4>
-              <p>
-                FUN is a non-profit organization dedicated to serving the canadian families community by providing family-focused services and fostering social cohesion. We aim to empower families through educational, social, and support initiatives.
-              </p>
-            </div>
-  
-            <div class="col-lg-6 col-md-6 footer-contact">
-              <h4>Contact Us</h4>
-              <p>
-                Vancouver, BC<br>
-                Canada <br>
-                <strong>Phone:</strong> +1 000 000 0000<br>
-                <strong>Email:</strong> info@example.com<br>
-              </p>
-  
-              <div class="social-links">
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+    
+              <div class="col-lg-6 col-md-6 footer-info">
+                <h4>Family United Network</h4>
+                <p>
+                  FUN is a non-profit organization dedicated to serving the canadian families community by providing family-focused services and fostering social cohesion. We aim to empower families through educational, social, and support initiatives.
+                </p>
               </div>
-  
+    
+              <div class="col-lg-6 col-md-6 footer-contact">
+                <h4>Contact Us</h4>
+                <p>
+                  Vancouver, BC<br>
+                  Canada <br>
+                  <strong>Email:</strong> info@fun-canada.com<br>
+                </p>
+    
+                <div class="social-links">
+                  <a href="https://www.facebook.com/share/aWT6p6rhkG6iAisa/?mibextid=A7sQZp" class="facebook"><i class="bi bi-facebook"></i></a>
+                </div>
+    
+              </div>
+    
             </div>
-  
           </div>
         </div>
+    
+        <div class="container">
+          <div class="copyright">
+            &copy;2024 Copyright <strong class="copyRight">Family United Network</strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            Designed by <a href="https://fawzymoawad.com/"><strong class="copyRight">Fawzy Moawad</strong></a>
+          </div>
+        </div>
+        
+
       </div>
-  
-      <div class="container">
-        <div class="copyright">
-          &copy;2024 Copyright <strong class="copyRight">Family United Network</strong>. All Rights Reserved
+
+      <!-- Arabic Content -->
+
+      <div  dir='rtl' lang='ar' id="footer-content-ar">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row">
+    
+              <div class="col-lg-6 col-md-6 footer-info">
+                <h4>شبكة الاتحاد الأسري</h4>
+                <p>
+                  FUN هي منظمة غير ربحية مكرسة لخدمة العائلات الكندية من خلال تقديم خدمات تركز على الأسرة وتعزيز التماسك الاجتماعي. نحن نسعى لتمكين العائلات من خلال المبادرات التعليمية والاجتماعية والدعم.
+                </p>
+              </div>
+    
+    
+              <div class="col-lg-6 col-md-6 footer-contact">
+                <h4>تواصل معنا</h4>
+                <p>
+                  فانكوفر، كولومبيا البريطانية<br>
+                  كندا <br>
+                  <strong>البريد الإلكتروني:</strong> info@example.com
+                </p>
+    
+                <div class="social-links">
+                  <a href="https://www.facebook.com/share/aWT6p6rhkG6iAisa/?mibextid=A7sQZp" class="facebook"><i class="bi bi-facebook"></i></a>
+                </div>
+    
+              </div>
+    
+            </div>
+          </div>
         </div>
-        <div class="credits">
-          Designed by <a href="https://fawzymoawad.com/"><strong class="copyRight">Fawzy Moawad</strong></a>
+    
+        <div class="container">
+          <div class="copyright">
+            &copy;2024 حقوق النشر محفوظة <strong class="copyRight">شبكة الاتحاد الأسري</strong>.
+          </div>
+          <div class="credits">
+            تصميم <a href="https://fawzymoawad.com/"><strong class="copyRight">فوزي معوض</strong></a>
+          </div>
         </div>
+
       </div>
 
     </section>
